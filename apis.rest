@@ -6,11 +6,10 @@ Authorization: Bearer 10|u4rC39ozBOI8XoQI62uWeRzS1JTm04uuUqnyXOe2e1537dc0
 ### signup
 POST http://127.0.0.1:8000/api/signup
 Content-Type: application/json
-Authorization: Bearer 10|u4rC39ozBOI8XoQI62uWeRzS1JTm04uuUqnyXOe2e1537dc0
 
 {
   "name": "Gyane",
-  "email": "gyanee@test.com",
+  "email": "gyanee1@test.com",
   "password": "abc1234"
 }
 
@@ -21,6 +20,6 @@ Authorization: Bearer 10|u4rC39ozBOI8XoQI62uWeRzS1JTm04uuUqnyXOe2e1537dc0
 
 {
   
-   "email": "gyane@test.com",
+   "email": "gyanee1@test.com",
   "password": "abc1234"
 }

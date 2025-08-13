@@ -1,6 +1,7 @@
 // apihelper.js
 
 import { apiPostRequest } from "@/utils/ApiSafeCall";
+import { apiRequest } from "./ApiSafeCall";
 
 // export const signupUser = async (formData) => {
 //   // format data for Laravel
@@ -18,7 +19,7 @@ import { apiPostRequest } from "@/utils/ApiSafeCall";
 
 export const signupUser = async (formData) => {
   try {
-    const res = await fetch("http://127.0.0.1:8000/api/signup", {
+    const res = await apiRequest("/signup", false, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,7 +27,7 @@ export const signupUser = async (formData) => {
       },
       body: JSON.stringify(formData),
     });
-
+//use status not ok to handle errors
     if (!res.ok) {
       const errorData = await res.json();
       return { success: false, message: errorData.message || "Signup failed" };

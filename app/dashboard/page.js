@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import Counter from '../Hook/usestate/page'; // Adjust the import path as necessary
 
 export default function DashboardBody() {
   const [stats] = useState([
@@ -47,6 +48,7 @@ export default function DashboardBody() {
                 </div>
                 <div className={`text-sm font-medium ${stat.color}`}>
                   {stat.change}
+                  <Counter/>
                 </div>
               </div>
             </div>
