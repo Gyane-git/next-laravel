@@ -9,7 +9,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200 py-4 px-6">
+    <header className="bg-white shadow-sm border-b border-gray-200 py-4 px-6 fixed top-0 w-full ">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-semibold text-gray-800">
           Welcome to My Website

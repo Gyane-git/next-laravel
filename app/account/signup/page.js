@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { signupUser } from "@/utils/ApiHelper"; 
+import { signupUser } from "@/utils/ApiHelper";
 
 export default function SignupPage() {
   const [formData, setFormData] = useState({
@@ -54,55 +54,89 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-8 px-4">
-    <div className="max-w-md mx-auto mt-10 bg-white">
-      <h2 className="text-2xl font-bold mb-6 text-gray-900">Sign Up</h2>
-      <form onSubmit={handleSubmit} className="space-y-4 text-gray-700">
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <input
-          type="password"
-          name="confirmPassword"
-          placeholder="Confirm Password"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-          className="w-full p-2 border rounded"
-          required
-        />
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded w-full"
+    <div className=" max-w-9xl  min-h-screen bg-blue-200 flex items-center justify-center py-8 px-4">
+      <div className="max-w-md w-full space-y-8">
+        <h2 className="text-2xl font-bold mb-6 text-gray-900">Sign Up</h2>
+        <form
+          onSubmit={handleSubmit}
+          className="mt-8 space-y-6 bg-white p-8 rounded-lg shadow-sm"
         >
-          {isLoading ? "Signing Up..." : "Sign Up"}
-        </button>
-      </form>
-    </div>
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
+            Ful Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
+            required
+          />
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
+            Email / Username
+          </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
+            required
+          />
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
+            Password
+          </label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
+            required
+          />
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
+            Confirm Password
+          </label>
+          <input
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-black"
+            required
+          />
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded w-full"
+          >
+            {isLoading ? "Signing Up..." : "Sign Up"}
+          </button>
+
+          <button
+            
+            className=" text-black py-2 px-4 rounded w-full cursor-text"
+          >
+            Alrady have an account? <a href="/account" className=" hover:bg-blue-400 text-black hover:underline-offset-0 cursor-pointer w-full"> Login </a>
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
