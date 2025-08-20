@@ -90,13 +90,13 @@ export default function DashboardBody() {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-[20%_80%] gap-6 mt-5">
-        {/* Col1 */}
-        <div className="flex p-6 min-h-screen  rounded-lg bg-white ">
+      <div className="grid grid-cols-[20%_80%] gap-6 mt-5 relative">
+        {/* Col1 - Sidebar */}
+        <div className="flex min-h-screen  rounded-lg bg-white shadow">
           <ProfessionalSimpleCategoriesMenu />
         </div>
 
-        {/* Col2 */}
+        {/* Col2 - Product Content */}
         <div className="min-h-screen rounded-lg bg-white shadow p-6">
           <ProductListingPage />
         </div>
