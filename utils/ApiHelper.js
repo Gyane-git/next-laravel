@@ -17,6 +17,7 @@ import { apiRequest } from "./ApiSafeCall";
 // };
 
 
+
 export const signupUser = async (formData) => {
   try {
     const res = await apiRequest("/signup", false, {
@@ -27,13 +28,26 @@ export const signupUser = async (formData) => {
       },
       body: JSON.stringify(formData),
     });
-//use status not ok to handle errors
-    if (!res.ok) {
-      const errorData = await res.json();
-      return { success: false, message: errorData.message || "Signup failed" };
+
+    let data = res;
+    try {
+      // ensure it's JSON
+      if (typeof res === "string") {
+        data = JSON.parse(res);
+      }
+    } catch (err) {
+      console.error("Invalid JSON from server:", res);
+      return {
+        success: false,
+        message: "Server sent invalid response. Please try again later.",
+      };
     }
 
-    const data = await res.json();
+    // Handle Laravel-style response
+    if (data.success === false) {
+      return { success: false, message: data.message || "Signup failed" };
+    }
+
     return { success: true, data };
   } catch (error) {
     console.error("Network Error:", error);

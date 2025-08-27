@@ -3,6 +3,9 @@ import { useState } from "react";
 import Counter from "../Hook/usestate/page"; // Adjust the import path as necessary
 import ProfessionalSimpleCategoriesMenu from "./Sidebar"; // Adjust the import path as necessar
 import ProductListingPage from "@/components/Productlist"; // Adjust the import path as necessary
+import ImageSlider from "@/components/sliderImage"; // Adjust the import path as necessary
+import LatestProducts from "@/components/latestProductt"; // Adjust the import path as necessary
+
 
 export default function DashboardBody() {
   const [stats] = useState([
@@ -100,6 +103,12 @@ export default function DashboardBody() {
         <div className="min-h-screen rounded-lg bg-white shadow p-6">
           <ProductListingPage />
         </div>
+      </div>
+      <div className="mt-8">
+        <ImageSlider />
+      </div>
+      <div className="mt-8">
+        <LatestProducts />
       </div>
     </main>
   );
