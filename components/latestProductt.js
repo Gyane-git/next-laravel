@@ -42,17 +42,49 @@ const products = [
     oldPrice: "Rs. 2,500.00",
     image: "/vercel.png",
   },
+    {
+    id: 6,
+    name: "Wireless Headphones",
+    brand: "Sony",
+    price: "Rs. 6,500.00",
+    oldPrice: "Rs. 7,500.00",
+    image: "/images3.jpg",
+  },
+    {
+    id: 7,
+    name: "Wireless Headphones",
+    brand: "Sony",
+    price: "Rs. 6,500.00",
+    oldPrice: "Rs. 7,500.00",
+    image: "/images3.jpg",
+  },
+    {
+    id: 8,
+    name: "Wireless Headphones",
+    brand: "Sony",
+    price: "Rs. 6,500.00",
+    oldPrice: "Rs. 7,500.00",
+    image: "/images3.jpg",
+  },
+    {
+    id: 9,
+    name: "Wireless Headphones",
+    brand: "Sony",
+    price: "Rs. 6,500.00",
+    oldPrice: "Rs. 7,500.00",
+    image: "/images3.jpg",
+  },
 ];
 
 export default function LatestProducts() {
   return (
     <section className="bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-9xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-blue-600 mb-8">
           LATEST PRODUCTS
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {products.map((product) => (
             <div
               key={product.id}

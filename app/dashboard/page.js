@@ -5,6 +5,9 @@ import ProfessionalSimpleCategoriesMenu from "./Sidebar"; // Adjust the import p
 import ProductListingPage from "@/components/Productlist"; // Adjust the import path as necessary
 import ImageSlider from "@/components/sliderImage"; // Adjust the import path as necessary
 import LatestProducts from "@/components/latestProductt"; // Adjust the import path as necessary
+import RelatedProductsPage from "@/components/Weekly"; // Adjust the import path as necessary
+import GlobalBrandsSlider from "@//components/GlobalBrand";
+import ProductShowcase from "@/components/specialproduct"
 
 
 export default function DashboardBody() {
@@ -110,6 +113,16 @@ export default function DashboardBody() {
       <div className="mt-8">
         <LatestProducts />
       </div>
+      <div className="mt-8">
+        <RelatedProductsPage />
+      </div>
+     <div className="mt-8">
+      <GlobalBrandsSlider/>
+     </div>
+     <div className="mt-8">
+      <ProductShowcase/>
+     </div>
+
     </main>
   );
 }
